@@ -2,24 +2,19 @@ package work.container;
 
 import work.model.Task;
 
-public class QueueContainer implements Container {
+import java.util.ArrayList;
+import java.util.List;
+
+public class QueueContainer extends SuperClass {
+
+    public QueueContainer() {
+        super();
+    }
+
+
     @Override
     public Task remove() {
-        return null;
+        return tasks.remove(0);
     }
 
-    @Override
-    public void add(Task task) {
-
-    }
-
-    @Override
-    public int size() {
-        return 0;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
-    }
 }

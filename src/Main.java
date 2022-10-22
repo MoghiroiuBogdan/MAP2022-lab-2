@@ -5,7 +5,7 @@ import work.model.MessageTask;
 import work.model.Task;
 import work.taskRunner.StrategyTaskRunner;
 import work.taskRunner.TaskRunner;
-
+import work.model.SortingTask;
 import java.time.LocalDateTime;
 
 
@@ -45,6 +45,26 @@ public class Main {
         runner.addTask(m4);
         runner.addTask(m5);
 
-        runner.executeAll();
+//        runner.executeAll();
+
+        TaskRunner runner1 = new StrategyTaskRunner(Strategy.FIFO);
+        runner1.addTask(m1);
+        runner1.addTask(m2);
+        runner1.addTask(m3);
+        runner1.addTask(m4);
+        runner1.addTask(m5);
+
+//        runner1.executeAll();
+
+        SortingTask a = new SortingTask(1,"map", new int[]{4, 3, 2, 1});
+        SortingTask a1 = new SortingTask(2,"map", new int[]{7,6,5,4});
+        SortingTask a2 = new SortingTask(3,"map", new int[]{9,8,7,6});
+        SortingTask a3 = new SortingTask(4,"map", new int[]{9,5,6,1});
+
+//        a.BubbleSort(a2.getA());
+        a.ArraySort(a3.getA());
+        a.execute();
+        a2.quickSort(a2.getA(), 0, 3);
+
     }
 }
