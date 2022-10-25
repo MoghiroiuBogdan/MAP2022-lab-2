@@ -13,7 +13,6 @@ public class StackContainer extends SuperClass{
 
     @Override
     public Task remove() {
-//        int[] a = new int[3];
         return tasks.remove(tasks.size() - 1);
     }
 }

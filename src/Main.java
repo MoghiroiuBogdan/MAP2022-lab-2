@@ -1,3 +1,5 @@
+import work.Sorter.BubbleSort;
+import work.Sorter.SortingStrategy;
 import work.container.Container;
 import work.container.StackContainer;
 import work.factory.Strategy;
@@ -56,15 +58,13 @@ public class Main {
 
 //        runner1.executeAll();
 
-        SortingTask a = new SortingTask(1,"map", new int[]{4, 3, 2, 1});
-        SortingTask a1 = new SortingTask(2,"map", new int[]{7,6,5,4});
-        SortingTask a2 = new SortingTask(3,"map", new int[]{9,8,7,6});
-        SortingTask a3 = new SortingTask(4,"map", new int[]{9,5,6,1});
 
-//        a.BubbleSort(a2.getA());
-        a.ArraySort(a3.getA());
+        SortingTask a = new SortingTask(1, "map", SortingStrategy.QuickSort, new int[]{7,6,5,4});
+        SortingTask a1 = new SortingTask(2,"map", SortingStrategy.BubbleSort,new int[]{7,6,5,4});
+        SortingTask a2 = new SortingTask(3,"map", SortingStrategy.BubbleSort,new int[]{9,8,7,6});
+        SortingTask a3 = new SortingTask(4,"map", SortingStrategy.QuickSort,new int[]{9,5,6,1});
+
         a.execute();
-        a2.quickSort(a2.getA(), 0, 3);
 
     }
 }
